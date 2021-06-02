@@ -1,0 +1,54 @@
+{
+  "name": "async-lazystream",
+  "version": "1.0.0",
+  "description": "Open Node Streams on demand with async support (original code from https://github.com/jpommerening/node-lazystream)",
+  "homepage": "https://github.com/ladeiko/async-lazystream",
+  "author": {
+    "name": "Siarhei Ladzeika",
+    "email": "sergey.ladeiko@gmail.com",
+    "url": "https://www.npmjs.com/~ladeiko"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ladeiko/async-lazystream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ladeiko/async-lazystream/issues"
+  },
+  "license": "MIT",
+  "main": "lib/lazystream.js",
+  "engines": {
+    "node": ">= 10.12.0"
+  },
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore . --fix",
+    "test": "nodeunit test/readable_test.js test/writable_test.js test/pipe_test.js test/fs_test.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint — fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "readable-stream": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^6.0.0",
+    "nodeunit": "^0.11.3"
+  },
+  "keywords": [
+    "emfile",
+    "lazy",
+    "streams",
+    "stream",
+    "async"
+  ]
+}
